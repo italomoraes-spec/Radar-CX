@@ -1,0 +1,116 @@
+﻿/* ============================================================
+   RADAR CX — proj.css (v3 — flat / sidebar)
+   ============================================================ */
+
+.proj-counters { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
+.proj-counter {
+  display: flex; align-items: center; gap: 8px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r-full); padding: 6px 14px 6px 8px;
+}
+.proj-counter__n { font-size: 13px; font-weight: 700; color: var(--on-surface); }
+.proj-filter-bar { margin-bottom: 8px; }
+.proj-filter-group { margin-bottom: 10px; }
+.proj-filter-label {
+  display: flex; align-items: center; gap: 5px;
+  font-size: 11px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .06em; color: var(--outline); margin-bottom: 6px;
+}
+.proj-filter-label .ms { font-size: 15px; }
+.chip--sec.active  { border-color: #00627f; background: rgba(0,98,127,.10); color: #00627f; }
+.chip--tool        { font-family: ui-monospace, monospace; font-size: 12px; }
+.chip--tool.active { border-color: #454600; background: rgba(69,70,0,.10); color: var(--tertiary); }
+.proj-grid {
+  display: grid; gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  margin-top: 20px;
+}
+.proj-card-new {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: 0 1px 3px rgba(0,43,96,.04);
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  display: flex; flex-direction: column;
+  cursor: pointer;
+  transition: all .2s ease;
+}
+.proj-card-new:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 16px rgba(0,43,96,.08);
+  border-color: rgba(0,43,96,.18);
+}
+.proj-card__img {
+  width: 100%; height: 160px; overflow: hidden;
+  background: linear-gradient(135deg, rgba(0,43,96,.08), rgba(0,43,96,.04));
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.proj-card__img img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s cubic-bezier(.4,0,.2,1); }
+.proj-card-new:hover .proj-card__img img { transform: scale(1.04); }
+.proj-card__img--empty { border-bottom: 1px solid var(--border); }
+.proj-card__cat-icon { font-size: 40px !important; color: var(--primary-c); opacity: .3; }
+.proj-card__body { padding: 18px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.proj-card__top-row { display: flex; align-items: center; justify-content: space-between; }
+.proj-card__title { font-weight: 700; font-size: 16px; line-height: 1.3; }
+.proj-card__categoria { display: flex; align-items: center; gap: 4px; font-size: 12px; color: var(--on-variant); }
+.proj-card__categoria .ms { font-size: 14px; }
+.proj-card__desc  { font-size: 13px; color: var(--on-variant); line-height: 1.45; }
+.proj-card__foot  {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 8px; font-size: 13px; color: var(--on-variant);
+  margin-top: auto; padding-top: 8px;
+  border-top: 1px solid var(--surface-high);
+}
+.proj-card__foot .ms { font-size: 15px; }
+.tag--tool { background: rgba(69,70,0,.08); color: var(--tertiary-c); font-family: ui-monospace,monospace; font-size: 11px; border: 1px solid rgba(69,70,0,.15); }
+.tag--more { background: var(--surface-highest); color: var(--on-variant); font-size: 11px; }
+.modal__box--wide { max-width: 680px; }
+.proj-detail__img { width: 100%; height: 220px; border-radius: var(--r-lg); overflow: hidden; margin-bottom: 16px; }
+.proj-detail__img img { width: 100%; height: 100%; object-fit: cover; }
+.proj-detail__header { display: flex; align-items: center; justify-content: space-between; }
+.proj-detail__section { margin-top: 20px; }
+.proj-detail__resumo { font-size: 14px; line-height: 1.7; background: var(--surface-low); border-radius: var(--r); padding: 14px; white-space: pre-wrap; }
+.wizard-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 24px; flex-wrap: wrap; }
+.wizard-steps { display: flex; align-items: center; flex-shrink: 0; }
+.wizard-step {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 12px; font-weight: 600; color: var(--outline);
+  padding: 6px 12px; border-radius: var(--r-full); border: 1px solid var(--outline-v); transition: all .2s;
+}
+.wizard-step span { width: 20px; height: 20px; border-radius: var(--r-full); background: var(--surface-high); display: grid; place-items: center; font-size: 11px; font-weight: 700; }
+.wizard-step.active { color: var(--primary); border-color: var(--primary); }
+.wizard-step.active span { background: var(--primary); color: white; }
+.wizard-step.done { color: var(--ok); border-color: var(--ok); }
+.wizard-step.done span { background: var(--ok); color: white; }
+.wizard-step-line { width: 20px; height: 1px; background: var(--outline-v); flex-shrink: 0; }
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+.ferr-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 6px; }
+.ferr-check { display: flex; align-items: center; gap: 6px; font-size: 13px; cursor: pointer; padding: 6px 10px; border-radius: var(--r); border: 1px solid var(--outline-v); background: var(--surface); transition: all .15s; }
+.ferr-check:hover { border-color: var(--primary); background: var(--primary-fixed); }
+.ferr-check input { accent-color: var(--primary); width: 14px; height: 14px; cursor: pointer; flex-shrink: 0; }
+.claude-step { display: flex; flex-direction: column; gap: 16px; }
+.claude-step__header { display: flex; align-items: flex-start; gap: 12px; padding: 14px; background: rgba(0,43,96,.04); border-radius: var(--r-lg); border: 1px solid var(--primary-fixed); }
+.claude-step__flow { display: flex; gap: 12px; align-items: flex-start; }
+.claude-step__num { width: 28px; height: 28px; border-radius: var(--r-full); flex-shrink: 0; background: var(--primary); color: white; display: grid; place-items: center; font-size: 13px; font-weight: 700; margin-top: 2px; }
+.claude-step__body { flex: 1; }
+.claude-step__skip { font-size: 12px; color: var(--outline); text-align: center; margin: 4px 0 0; }
+.prompt-box { position: relative; background: var(--surface-low); border: 1px solid var(--outline-v); border-radius: var(--r); padding: 14px; padding-bottom: 44px; }
+.prompt-box pre { font-family: ui-monospace,"SFMono-Regular",Menlo,monospace; font-size: 11.5px; white-space: pre-wrap; word-break: break-word; margin: 0; color: var(--on-surface); max-height: 180px; overflow-y: auto; line-height: 1.6; }
+.btn-copy { position: absolute; bottom: 10px; right: 10px; display: inline-flex; align-items: center; gap: 5px; padding: 6px 14px; border-radius: var(--r-full); background: var(--primary); color: white; border: 0; font: inherit; font-size: 12px; font-weight: 600; cursor: pointer; transition: all .15s; }
+.btn-copy .ms { font-size: 15px; }
+.btn-copy:hover { background: #003579; }
+#w-resposta-ia { font-family: ui-monospace,"SFMono-Regular",Menlo,monospace; font-size: 12px; resize: vertical; }
+.ia-preview { background: rgba(27,94,32,.04); border: 1px solid rgba(27,94,32,.2); border-radius: var(--r-lg); padding: 14px; margin-top: 4px; }
+.img-step { display: flex; flex-direction: column; gap: 16px; }
+.img-step__header { display: flex; align-items: flex-start; gap: 12px; padding: 14px; background: rgba(0,43,96,.04); border-radius: var(--r-lg); border: 1px solid var(--primary-fixed); }
+.img-dropzone { position: relative; width: 100%; min-height: 180px; border: 2px dashed var(--outline-v); border-radius: var(--r-xl); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; cursor: pointer; transition: all .2s; background: var(--surface-low); overflow: hidden; }
+.img-dropzone:hover, .img-dropzone.dragover { border-color: var(--primary); background: var(--primary-fixed); }
+.img-dropzone__hint { font-size: 13px; color: var(--on-variant); }
+.img-preview-thumb { width: 100%; height: 180px; object-fit: cover; border-radius: var(--r-lg); }
+@media (max-width: 640px) {
+  .field-row { grid-template-columns: 1fr; }
+  .ferr-grid { grid-template-columns: repeat(2, 1fr); }
+  .wizard-steps { display: none; }
+  .proj-grid { grid-template-columns: 1fr; }
+}
+
