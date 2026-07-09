@@ -1,0 +1,19 @@
+name: Deploy to GoDeploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Deploy to GoDeploy
+        uses: goca-se/godeploy/action@v1
+        with:
+          api-key: ${{ secrets.GODEPLOY_DEPLOY_KEY }}
+          description: Deploy from GitHub Actions
